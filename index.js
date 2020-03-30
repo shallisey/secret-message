@@ -17,9 +17,9 @@ document.querySelector('form').addEventListener('submit', event => {
 
   const input = document.querySelector('#message-input');
   //encoded
-  const encrypted = Base64.encode(input.value);
+  const encoded = Base64.encode(input.value);
 
   const linkInput = document.querySelector('#link-input');
-  linkInput.value = `${window.location}#${encrypted}`;
+  linkInput.value = `${window.location}#${encoded}`;
   linkInput.select();
 });
