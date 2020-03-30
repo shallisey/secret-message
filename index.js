@@ -1,3 +1,14 @@
+const { hash } = window.location;
+
+const secretMessage = atob(hash.replace('#', ''));
+
+if (secretMessage) {
+  document.querySelector('#message-form').classList.add('hide');
+  document.querySelector('#message-show').classList.remove('hide');
+
+  document.querySelector('h1').innerHTML = `${secretMessage}`;
+}
+
 document.querySelector('form').addEventListener('submit', event => {
   event.preventDefault();
 
